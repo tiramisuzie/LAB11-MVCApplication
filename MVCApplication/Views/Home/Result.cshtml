@@ -1,0 +1,46 @@
+﻿@model List<MVCApplication.Models.Person>
+
+@{
+    var startYear = (int)ViewData["startYear"];
+    var endYear = (int)ViewData["endYear"];
+}
+
+<head>
+</head>
+<body>
+    <div>
+        <h1>"Time" Person</h1>
+        <h1>from @startYear  to @endYear</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Name</th>
+                    <th>Honor</th>
+                    <th>Country</th>
+                    <th>Birth Year</th>
+                    <th>Death Year</th>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var person in Model)
+                {
+                    <tr>
+                        <td>@person.Year</td>
+                        <td>@person.Name</td>
+                        <td>@person.Honor</td>
+                        <td>@person.Country</td>
+                        <td>@person.Birth_Year</td>
+                        <td>@person.DeathYear</td>
+                        <td>@person.Title</td>
+                        <td>@person.Category</td>
+                        <td>@person.Context</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
